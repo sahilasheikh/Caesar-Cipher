@@ -9,9 +9,10 @@ public class operation {
 		char[] ch = msg.toCharArray();					//		conversion to char array
 		
 		for (int i = 0; i < msg.length(); i++) {
-			a = ch[i] + key;							//		shifting char value key times
-			if ((Character.isUpperCase(ch[i]) && a > 90) || (Character.isLowerCase(ch[i]) && a > 122)) {		//		condition if char extends Z || z
-				a = a - 26;								//		if true shift char negative 26 times
+			if (ch[i] != 32) {
+				a = ch[i] + key;							//		shifting char value key times
+			} else {
+				a = ch[i];
 			}
 			secret_message += (char) a;					//		cast int to char and store into string
 		}
@@ -26,13 +27,13 @@ public class operation {
 		char[] ch = secret_message.toCharArray();					//		conversion to char array
 		
 		for (int i = 0; i < secret_message.length(); i++) {
-			a = ch[i] - key;							//		shifting char value key times
-//			if ((Character.isUpperCase(ch[i]) && a > 90) || (Character.isLowerCase(ch[i]) && a > 122)) {		//		condition if char extends Z || z
-//				a = a + 26;								//		if true shift char negative 26 times
-//			}
+			if (ch[i] != 32) {
+				a = ch[i] - key;							//		shifting char value key times
+			} else {
+				a = ch[i];
+			}
 			msg += (char) a;
 		}
-		
 		return msg;
 	}
 }
