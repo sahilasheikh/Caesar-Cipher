@@ -10,7 +10,7 @@ public class operation {
 		
 		for (int i = 0; i < msg.length(); i++) {
 			if (ch[i] != 32) {
-				a = ch[i] + key;							//		shifting char value key times
+				a = ch[i] - key;							//		shifting char value key times
 			} else {
 				a = ch[i];
 			}
@@ -28,7 +28,7 @@ public class operation {
 		
 		for (int i = 0; i < secret_message.length(); i++) {
 			if (ch[i] != 32) {
-				a = ch[i] - key;							//		shifting char value key times
+				a = ch[i] + key;							//		shifting char value key times
 			} else {
 				a = ch[i];
 			}
